@@ -1,18 +1,10 @@
 import { Router } from 'express';
-import Students from './app/models/Students';
+import StudentController from './app/controllers/StudentController';
+import UserController from './app/controllers/UserController';
 
 const routes = new Router();
 
-routes.get('/', async (req,res) => {
-  const students = await Students.create({
-    name: 'Debony Schmidt',
-    email: 'debony@gmail.com',
-    age: '30',
-    weight: '65',
-    height: '1.67',
-  })
-
-  return res.json(students);
-})
+routes.post('/students', StudentController.store);
+routes.post('/users', UserController.store);
 
 export default routes;
