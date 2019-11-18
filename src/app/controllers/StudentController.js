@@ -19,6 +19,10 @@ class StudentController {
       height,
     });
   }
+
+  async update(req, res) {
+    return res.json({ ok: true });
+  }
 }
 
 export default new StudentController();
