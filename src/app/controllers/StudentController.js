@@ -21,6 +21,11 @@ class StudentController {
   }
 
   async update(req, res) {
+
+    const student = Students.findByPk(req.studentId);
+
+    console.log(student);
+
     return res.json({ ok: true });
   }
 }
